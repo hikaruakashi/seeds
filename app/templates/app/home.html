@@ -1,0 +1,176 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- <div class="page">
+
+    <div class="Topic-serch-list">
+
+        <div class="Topic-name">       
+            <div>
+                <h3>トピック</h3>
+                <hr>
+            </div>
+            
+            <div class="topic-serch">
+                <form method="GET" action="{% url 'home' %}">
+                    <input type="text" name="q" placeholder="検索" />
+                </form>
+            </div>
+
+            <div class="all-topic">
+                <a href="{% url 'home' %}">すべて</a>
+            </div>
+
+            {% for topic in topics %}
+            <div class="list-serch">
+                <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="post">
+        
+        <div>
+            <h1 class="all-post">これまでの作品</h1>
+        </div>
+
+        {% for post in posts %}
+        <div class="post-list">
+
+            <div class="UD-list">
+                {% if request.user == post.author %}
+                <a href="{% url 'update-post' post.id %}">編集</a>
+                <a href="{% url 'delete-post' post.id %}">削除</a>
+                {% endif %}
+            </div>
+
+            <div class="post-list-item">
+                <a href="{% url 'user-profile' post.author.id %}">
+                    <p class="post-list-author">
+                        @{{post.author.username}}
+                    </p>
+                </a>
+                                
+                <a href="{% url 'post' post.id %}">
+                    <p>
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" width="100" height="100"/>
+                        {% endif %}
+                    </p>
+
+                    <p class="post-list-title">
+                        {{post.title}}
+                    </p>
+                    <p class="post-list-description">
+                        {{post.description}}
+                    </p>
+                    <p class="post-list-topic">
+                        {{post.topic}}
+                    </p>
+                </a>
+                <hr>
+            </div>
+        </div>   
+        {% endfor %}
+    </div>
+</div> -->
+
+<div class="page">
+    <section id="posts">
+        <div class="containers">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h5>Seeds</h5>
+                    <h1>いままでの作品</h1>
+                    <h6>未来の生徒のためにをコンセプトに</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="post-list">
+        <div class="Topic-serch-list">
+
+            <div class="Topic-name">
+                <ul>
+                    <li>       
+                        <div>
+                            <h3>トピック</h3>
+                            <hr>
+                        </div>
+                    </li>  
+                    <li>  
+                        <div class="topic-serch">
+                            <form method="GET" action="{% url 'home' %}">
+                                <input type="text" name="q" placeholder="検索" />
+                            </form>
+                        </div>
+                    </li>
+                        <div class="all-topic">
+                            <li><a href="{% url 'home' %}">すべて</a></li>
+                        </div>
+                        
+                        {% for topic in topics %}
+                        <div class="list-serch">
+                            <li><a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a></li>
+                        </div>
+                        {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="post-list-item">
+            <div class="container">
+                <div class="row g-4">
+                    {% for post in posts %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+
+                            <div class="dropdown ms-auto">
+                                {% if request.user == post.author %}
+                                <button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{% url 'update-post' post.id %}">編集</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'delete-post' post.id %}">削除</a></li>
+                                </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="postlist">
+                                <a href="{% url 'post' post.id %}">
+                                    {% if post.image %}
+                                    <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                                    {% endif %}
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            {{post.title}}
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <p class="post-topic">
+                                    #{{post.topic}}
+                                </p>
+                            </div>
+                            <div>
+                                <a href="{% url 'user-profile' post.author.id %}">
+                                    <p class="post-list-author">
+                                        投稿者：{{post.author.username}}
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    {% endfor %} 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

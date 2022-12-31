@@ -1,0 +1,50 @@
+<!-- <nav class="navbar">
+    <div class="main-menu">
+        <ul>
+            <li><a href="/"><h1>Seed</h1></a></li>
+        </ul>
+    </div>
+
+    <div class="user-menu">
+        <ul>    
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'create-post' %}">作品を投稿する</a></li>
+            <li><a href="{% url 'logout' %}">ログアウト</a></li>
+            {% else %}
+            <li><a href="{% url 'register' %}">登録</a></li>
+            <li><a href="{% url 'login' %}">ログイン</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <div class="container">
+        <a class="text-white pt-1" href="/">
+            <h2>Seeds</h2>
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'create-post' %}">作品を投稿する</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">登録</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">ログイン</a>
+            </li>
+            {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>

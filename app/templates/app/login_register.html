@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if page == 'login' %}
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <label>username:</label>
+        <input type="text" name="username" placeholder="名前を入力">
+
+        <label>Passwor:</label>
+        <input type="password" name="password" placeholder="パスワードを入力">
+
+        <input type="submit" value="Login" />
+    </form>
+
+    <p>登録はこちら</p>
+    <a href="{% url 'register' %}">登録</a>
+</div>
+{% else %}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register" />
+    </form>
+
+    <p>登録済み</p>
+    <a href="{% url 'login' %}">ログイン</a>
+</div>
+{% endif %}
+
+{% endblock content %}
