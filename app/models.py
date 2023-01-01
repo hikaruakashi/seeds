@@ -16,8 +16,11 @@ class Post(models.Model):
     topic = models.ForeignKey(Topic,on_delete=models.SET_NULL,null=True)
     description = models.TextField(null=False)
     link = models.URLField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-    
+    class Meta:
+        ordering = ['-created_at','-updated_at']
     #class Meta:
         #降順のやつ
         # ordering = ['']

@@ -126,7 +126,7 @@
             <div class="container">
                 <div class="row g-4">
                     {% for post in posts %}
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6">
                         <div class="card">
 
                             <div class="dropdown ms-auto">
@@ -150,19 +150,25 @@
                                             {{post.title}}
                                         </h5>
                                     </div>
+
+                                    <div class="card-description">
+                                        <p class="card-description text-truncate">
+                                            {{post.description}}
+                                        </p>
+                                    </div>
                                 </a>
-                            </div>
-                            <div>
-                                <p class="post-topic">
-                                    #{{post.topic}}
-                                </p>
-                            </div>
-                            <div>
-                                <a href="{% url 'user-profile' post.author.id %}">
-                                    <p class="post-list-author">
-                                        投稿者：{{post.author.username}}
-                                    </p>
-                                </a>
+                                    <div>
+                                        <p class="post-topic">
+                                            #{{post.topic}}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <a href="{% url 'user-profile' post.author.id %}">
+                                            <p class="post-list-author">
+                                                投稿者：{{post.author.username}}
+                                            </p>
+                                        </a>
+                                    </div>
                             </div>
                         </div>
                         

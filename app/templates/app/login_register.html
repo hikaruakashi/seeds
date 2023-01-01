@@ -6,14 +6,17 @@
 <div>
     <form method="POST" action="">
         {% csrf_token %}
+        <div>
+            <label>ユーザーネーム:</label>
+            <input type="text" name="username" placeholder="名前を入力">
+        </div>
 
-        <label>username:</label>
-        <input type="text" name="username" placeholder="名前を入力">
+        <div>
+            <label>パスワード:</label>
+            <input type="password" name="password" placeholder="パスワードを入力">
+        </div>
 
-        <label>Passwor:</label>
-        <input type="password" name="password" placeholder="パスワードを入力">
-
-        <input type="submit" value="Login" />
+        <input type="submit" value="ログイン" />
     </form>
 
     <p>登録はこちら</p>
@@ -22,12 +25,44 @@
 {% else %}
 
 <div>
-    <form method="POST" action="">
+    <!-- <form method="POST" action="">
         {% csrf_token %}
-        {{form.as_p}}
         <input type="submit" value="Register" />
-    </form>
+    </form> -->
 
+    <form method="POST" action="" class="register-form">
+        {% csrf_token %}
+      <div class="fieldWrapper">
+        <label for="{{form.email.id_for_label}}">メールアドレス:</label>
+        {{form.email}}
+        <span class="error">{{form.email.errors}}</span>
+      </div>
+      <div class="fieldWrapper">
+        <label for="{{form.username.id_for_label}}">ユーザーネーム:</label>
+        {{form.username}}
+        <span class="error">{{form.username.errors}}</span>
+      </div>
+      <div class="fieldWrapper">
+        <label for="{{form.password1.id_for_label}}">パスワード:</label>
+        {{form.password1}}
+        <span class="error">{{form.password1.errors}}</span>
+      </div>
+      <div class="fieldWrapper">
+        <label for="{{form.password2.id_for_label}}">確認用パスワード:</label>
+        {{form.password2}}
+        <span class="error">{{form.password2.errors}}</span>
+      </div>
+      {% if form.non_field_errors %}
+      <div class="non_form_errors">
+        <span class="error">{{form.non_field_errors.as_ul}}</span>
+      </div>
+      {% endif %}
+      <input type="submit" value="登録" class="submit-button"/>
+      </form>
+
+
+
+    
     <p>登録済み</p>
     <a href="{% url 'login' %}">ログイン</a>
 </div>

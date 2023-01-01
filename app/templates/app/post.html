@@ -1,9 +1,20 @@
 {% extends 'main.html' %}
 
 {%block content %}
+<div class="author-post-list">
+    <div class="author-post">
+        <h2>
+            {{post.title}}
+        </h2>
 
-<!-- 二重を忘れるな -->
-<h1>{{post.title}}</h1>
+        {% if post.image %}
+        <img class="card-img" src="{{ post.image.url }}">
+        {% endif %}
+
+        <p>
+            {{post.description}}
+        </p>
+    </div>
+</div>
 
 {% endblock content %}
-aaa

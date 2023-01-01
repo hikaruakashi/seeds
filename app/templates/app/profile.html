@@ -1,28 +1,32 @@
 {% extends 'main.html' %}
+{% load static %}
+
 
 {% block content %}
 
-<style>
-    .profile-container{
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-    }
-</style>
+<div class="page">
+    <section id="posts">
+        <div class="containers">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h5>Seeds</h5>
+                    <h1>いままでの作品</h1>
+                    <h6>未来の生徒のためにをコンセプトに</h6>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h1>{{user.username}}</h1>
+    <div class="post-list">
+        <div>
+            <div class="user-name">
+                <h2>ユーザー名：{{user.username}}</h2>
+            </div>
+        </div>
 
-<div class="profile-container">
-    <div>
-
-    </div>
-
-    <div>
-        {% include 'app/post_component.html' %}
-    </div>
-
-    <div>
-
+        <div>
+            {% include 'app/post_component.html' %}
+        </div>
     </div>
 </div>
-
 {% endblock content %}

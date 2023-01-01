@@ -1,18 +1,55 @@
-{% for post in posts %}
-<div>
-    <!-- ここの条件文で投稿したものが自身のもではないときに表示をしない -->
-    {% if request.user == post.user %}
-    <a href="{% url 'update-post' post.id %}">編集</a>
-    <a href="{% url 'delete-post' post.id %}">削除</a>
-    {% endif %}
-        
-    <a href="{% url 'user-profile' post.author.id %}">投稿者：{{post.author.username}}</a>
-    <h5>
-        <a href="{% url 'post' post.id %}">{{post.title}}</a>
-        <p>{{post.description}}</p>
-        <p>{{post.topic}}</p>
-    </h5>
-    <hr>
-</div>   
+<div class="post-list-item">
+    <div class="container">
+        <div class="row g-4">
+            {% for post in posts %}
+            <div class="col-md-6">
+                <div class="card">
 
-{% endfor %}
+                    <div class="dropdown ms-auto">
+                        {% if request.user == post.author %}
+                        <button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{% url 'update-post' post.id %}">編集</a></li>
+                            <li><a class="dropdown-item" href="{% url 'delete-post' post.id %}">削除</a></li>
+                        </ul>
+                        {% endif %}
+                    </div>
+
+                    <div class="postlist">
+                        <a href="{% url 'post' post.id %}">
+                            {% if post.image %}
+                            <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                            {% endif %}
+
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{post.title}}
+                                </h5>
+                            </div>
+
+                            <div class="card-description">
+                                <p class="card-description text-truncate">
+                                    {{post.description}}
+                                </p>
+                            </div>
+                        </a>
+                            <div>
+                                <p class="post-topic">
+                                    #{{post.topic}}
+                                </p>
+                            </div>
+                            <div>
+                                <a href="{% url 'user-profile' post.author.id %}">
+                                    <p class="post-list-author">
+                                        投稿者：{{post.author.username}}
+                                    </p>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+</div>
