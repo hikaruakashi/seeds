@@ -15,7 +15,20 @@ body {
     background-color:#c4d7d1 ;
 }
 
+/* .main {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 24px;
+    background-color: white;
+  
+    box-shadow: 5px 10px #888888;
+  }
+   */
 /* post-list-item */
+
+.sub h1 {
+    text-align: center
+}
 
 .post-list-item {
     max-width: 1400px;
@@ -122,6 +135,8 @@ section {
     
     height: 15vw;
     object-fit: cover;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+
 }
 
 .card-img {
@@ -133,3 +148,141 @@ section {
     object-fit: cover;
 }
 
+/* create-post section */
+
+
+.sub {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: white;
+  
+    box-shadow: 5px 10px #888888; 
+}
+
+/* fieldWrapper secttion */
+
+.fieldWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.fieldWrapper label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.fieldWrapper input {
+    margin-bottom: 6px;
+    border: 1px solid lightgray;
+    min-height: 40px;
+}
+
+/* fieldWrapper-image section */
+
+.fieldWrapper-image {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.fieldWrapper-image label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.fieldWrapper-image input {
+    margin-bottom: 6px;
+    min-height: 40px;
+}
+
+/* fieldWrapper-link section */
+
+.fieldWrapper-link {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align:right
+}
+
+.fieldWrapper-link label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.link-button {
+    width: 60px;
+    height: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color:#21252f;
+    color: white;
+    cursor: pointer;
+}
+
+.error {
+    font-size: 14px;
+    color: red;
+}
+
+.errorlist {
+    margin: 0;
+}
+
+.non_form_errors {
+    margin-bottom: 20px;
+}
+  
+.submit-button {
+    display: block;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* post section */
+
+
+.images img {
+    width: 100%;
+    height: 50vw;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #312d2a;
+  }
+
+  .container .text-muted {
+    margin: 20px 0;
+  }
+
+
+  .footer-home {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #312d2a;
+  }
+
+  .container .text-muted {
+    margin: 20px 0;
+  }

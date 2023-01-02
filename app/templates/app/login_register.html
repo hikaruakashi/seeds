@@ -3,52 +3,58 @@
 {% block content %}
 
 {% if page == 'login' %}
-<div>
+<div class="sub">
+  <h1>ログイン</h1>
     <form method="POST" action="">
         {% csrf_token %}
-        <div>
-            <label>ユーザーネーム:</label>
+        <div class="fieldWrapper">
+            <label>ユーザーネーム</label>
             <input type="text" name="username" placeholder="名前を入力">
         </div>
 
-        <div>
-            <label>パスワード:</label>
+        <div class="fieldWrapper">
+            <label>パスワード</label>
             <input type="password" name="password" placeholder="パスワードを入力">
         </div>
 
-        <input type="submit" value="ログイン" />
+        <input type="submit" value="ログイン" class="submit-button" />
     </form>
-
-    <p>登録はこちら</p>
-    <a href="{% url 'register' %}">登録</a>
+          <hr>
+            <div class="fieldWrapper-link">
+              <label>アカウントをお持ちでない方はこちらから:
+                <a href="{% url 'register' %}">
+                  <input type="submit" value="登録" class="link-button"/>
+                </a>
+              </label>
+            </div>
 </div>
 {% else %}
 
-<div>
+<div class="sub">
     <!-- <form method="POST" action="">
         {% csrf_token %}
         <input type="submit" value="Register" />
     </form> -->
-
+  <h1>アカウント作成</h1>
     <form method="POST" action="" class="register-form">
         {% csrf_token %}
       <div class="fieldWrapper">
-        <label for="{{form.email.id_for_label}}">メールアドレス:</label>
+        <label for="{{form.email.id_for_label}}">メールアドレス</label>
         {{form.email}}
         <span class="error">{{form.email.errors}}</span>
       </div>
       <div class="fieldWrapper">
-        <label for="{{form.username.id_for_label}}">ユーザーネーム:</label>
+        <label for="{{form.username.id_for_label}}">ユーザーネーム</label>
         {{form.username}}
         <span class="error">{{form.username.errors}}</span>
       </div>
       <div class="fieldWrapper">
-        <label for="{{form.password1.id_for_label}}">パスワード:</label>
+        <label for="{{form.password1.id_for_label}}">パスワード</label>
         {{form.password1}}
         <span class="error">{{form.password1.errors}}</span>
       </div>
       <div class="fieldWrapper">
-        <label for="{{form.password2.id_for_label}}">確認用パスワード:</label>
+        <label for="{{form.password2.id_for_label}}">確認用パスワード</label>
         {{form.password2}}
         <span class="error">{{form.password2.errors}}</span>
       </div>
@@ -59,12 +65,16 @@
       {% endif %}
       <input type="submit" value="登録" class="submit-button"/>
       </form>
+      <hr>
 
 
-
-    
-    <p>登録済み</p>
-    <a href="{% url 'login' %}">ログイン</a>
+      <div class="fieldWrapper-link">
+        <label>アカウントをお持ちの方はこちらから:
+          <a href="{% url 'login' %}">
+            <input type="submit" value="ログイン" class="link-button"/>
+          </a>
+        </label>
+      </div>
 </div>
 {% endif %}
 

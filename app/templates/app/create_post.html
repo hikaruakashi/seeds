@@ -1,59 +1,42 @@
 {% extends 'main.html' %}
 
 {% block content %}
-
-<!-- <div>
-    <form method="POST" action="" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div>
-            {{form.title}}
-        </div>
-
-        <div>
-            {{form.body}}
-        </div>
-        <input type="submit" value="submit" />
-    </form>
-</div> -->
-
-<div class="page new-question-page">
+<div class="sub">
     <h1 class="title">作品を投稿する</h1>
     
     <form method="POST" action="" class="new-question-form" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="fieldWrapper">
-        <label for="{{form.title.id_for_label}}">タイトル:</label>
+        <label for="{{form.title.id_for_label}}">タイトル</label>
         {{form.title}}
-        <span class="error">{{form.title.errors}}</span>
+        <sipan class="error">{{form.title.errors}}</span>
         </div>
         
-        <div class="fieldWrapper">
-        <label for="{{form.image.id_for_label}}">写真:</label>
+        <div class="fieldWrapper-image">
+        <label for="{{form.image.id_for_label}}">写真</label>
         {{form.image}}
         <span class="error">{{form.image.errors}}</span>
         </div>
 
         <div class="fieldWrapper">
-        <label for="{{form.description.id_for_label}}">説明：</label>
+        <label for="{{form.description.id_for_label}}">説明</label>
         {{form.description}}
         <span class="error">{{form.description.errors}}</span>
         </div>
 
         <div class="fieldWrapper">
-        <label for="{{form.link.id_for_label}}">Githubのリンク:</label>
+        <label for="{{form.link.id_for_label}}">Githubリンク</label>
         {{form.link}}
         <span class="error">{{form.link.errors}}</span>
         </div>
 
         <div class="fieldWrapper">
-            <label for="{{form.topic.id_for_label}}">タグ:</label>
+            <label for="{{form.topic.id_for_label}}">タグ</label>
             {{form.topic}}
             <span class="error">{{form.topic.errors}}</span>
         </div>
 
-    <input type="submit" value="提出" class="submit-button"/>
+        <input type="submit" value="提出" class="submit-button"/>
     </form>
-    
-    </div>
-    
-    {% endblock content %}
+</div>    
+{% endblock content %}

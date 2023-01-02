@@ -1,20 +1,29 @@
 {% extends 'main.html' %}
 
 {%block content %}
-<div class="author-post-list">
-    <div class="author-post">
+<div class="sub">
+<!-- <div class="author-post-list">
+    <div class="author-post"> -->
         <h2>
             {{post.title}}
         </h2>
-
-        {% if post.image %}
-        <img class="card-img" src="{{ post.image.url }}">
-        {% endif %}
-
+        <div class="images"> 
+            {% if post.image %}
+            <img class="card-img" src="{{ post.image.url }}">
+            {% endif %}
+        </div>
         <p>
             {{post.description}}
         </p>
-    </div>
+        <p>
+            <a href="{{post.link}}">Githubリンク</a>
+        </p>
+
 </div>
+<footer class="footer">
+    <div class="container text-center">
+        <p>created by hikaru akashi</p>
+    </div>
+</footer>
 
 {% endblock content %}

@@ -22,19 +22,20 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
             crossorigin="anonymous">
         </script>
+        <div class="main">
+            {% include 'navbar.html' %}
         
-        {% include 'navbar.html' %}
-    
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li></li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% block content %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li></li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% block content %}
+            {% endblock %}
 
-        {% endblock %}
 
+        </div>
     </body>
 </html>

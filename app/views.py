@@ -79,9 +79,11 @@ def registerPage (request):
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
+    #タグ検索をする
     posts = Post.objects.filter(
         Q(topic__name__icontains=q) |
-        Q(description__icontains=q)
+        Q(description__icontains=q) |
+        Q(title__icontains=q)
         )
 
     topics = Topic.objects.all()
