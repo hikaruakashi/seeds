@@ -29,6 +29,8 @@ body {
 .sub h1 {
     text-align: center
 }
+ 
+/* post-list-item section */
 
 .post-list-item {
     max-width: 1400px;
@@ -41,7 +43,7 @@ body {
 }
 
 .post-list-item .card {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; 
     padding: 0;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -50,14 +52,34 @@ body {
   }
 
 .post-list-item .card h5 {
-    margin: 10px;
+
+    color: black;
+    font-weight: 700;
+    /* margin: 10px; */
 }
 
-.post-list-item .card p {
+.post-list-item .card p,
+.post-author a {
     font-size: 12px;
     margin: 10px;
     opacity: 0.65;
+
+    font-weight: 700;
 }
+
+.post-topic,
+.post-author {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
 
 .author-post {
     max-width: 1400px;
@@ -95,20 +117,7 @@ section {
 
 .post-list {
     display: grid;
-    grid-template-columns: 0.5fr 3fr;
-}
-
-.Topic-name {
-    max-width: 1400px;
-    margin: 24px;
-    padding: 24px;
-    background-color: white;
-    border-radius: 8px;
-  
-    box-shadow: 5px 10px #888888;
-
-    position: sticky;
-    top:100px;
+    grid-template-columns: 0.6fr 3fr;
 }
 
 .user-name {
@@ -255,16 +264,107 @@ section {
 
 /* post section */
 
+.your-post-item h2 {
+    color: black;
+    font-weight: 700;
 
-.images img {
+    text-align: center;
+    margin: 24px;
+}
+
+.dropdown {
+    text-align: right;
+}
+
+.dropdown button {
+    background-color: white;
+}
+
+.post-images {
+    margin-bottom:24px;
+}
+
+.post-images img {
     width: 100%;
-    height: 50vw;
+    height: 30vw;
     display: block;
     margin: 0 auto;
 }
 
+.sub {
+    color: black;
+    font-weight: 700;
+}
+
+
+.link a,
+.author a {
+    color:black; 
+    box-shadow: 3px 3px #888888;
+
+}
+
+.btn {
+    background-color:#c4d7d1;
+}
+
+.post-description {
+    margin-bottom: 20px;
+}
+
+.post-description label {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.link,
+.author {
+    margin:10px;
+    text-align: right;
+}
+
+/* topic-serch section */
+
+.Topic-name h3 {
+    text-align: center;
+
+
+}
+
+
+
+.all-topic,
+.list-serch,
+.topic-serch {
+    margin-bottom:10px;
+}
+
+.list-serch a,
+.all-topic a{
+    box-shadow: 3px 3px #888888;
+}
+
+.Topic-serch-list {
+    max-width: 1400px;
+    margin: 24px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+  
+    box-shadow: 5px 10px #888888;
+
+    position: sticky;
+    top:100px;
+}
+
+
+
+
+/* footer section */
+
 .footer {
-    position: absolute;
+    position:absolute;
     bottom: 0;
     width: 100%;
     height: 60px;
@@ -286,3 +386,16 @@ section {
   .container .text-muted {
     margin: 20px 0;
   }
+
+.sub1 {
+    margin: 20px auto;
+    border-radius: 8px;
+    background-color: white;
+  
+    box-shadow: 5px 10px #888888;    
+}
+
+
+.dropdown button {
+    background-color: white;
+}

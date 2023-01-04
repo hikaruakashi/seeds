@@ -2,28 +2,49 @@
 
 {%block content %}
 <div class="sub">
-<!-- <div class="author-post-list">
-    <div class="author-post"> -->
-        <h2>
+    <div class="dropdown">
+        {% if request.user == post.author %}
+        <button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="{% url 'update-post' post.id %}">編集</a></li>
+            <li><a class="dropdown-item" href="{% url 'delete-post' post.id %}">削除</a></li>
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="your-post-item">
+        <h2 class="post-title">
             {{post.title}}
         </h2>
-        <div class="images"> 
+
+        <div class="post-images"> 
             {% if post.image %}
             <img class="card-img" src="{{ post.image.url }}">
             {% endif %}
         </div>
-        <p>
-            {{post.description}}
-        </p>
-        <p>
-            <a href="{{post.link}}">Githubリンク</a>
-        </p>
 
+        <div class="post-description">
+            <label for="post-description">説明</label>
+                <p class="post-description">
+                    {{post.description}}
+                </p>
+        </div>
+        <hr>
+        
+        <div class="link">
+            <a class="btn btn-sm" role="button" href="{{post.link}}">Githubリンク</a>
+        </div>
+
+        <div class="author">
+            <a class="btn btn btn-sm" role="button" href="{% url 'user-profile' post.author.id %}">投稿者：{{post.author.username}}</a>
+        </div>
+    </div>
 </div>
-<footer class="footer">
+
+<!-- <footer class="footer">
     <div class="container text-center">
         <p>created by hikaru akashi</p>
     </div>
-</footer>
+</footer> -->
 
 {% endblock content %}

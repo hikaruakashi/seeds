@@ -135,7 +135,7 @@ def updatePost(request,pk):
 
     if request.method == 'POST':
         #ここがあまりよくわからない
-        form = PostForm(request.POST,instance=post)
+        form = PostForm(request.POST,request.FILES,instance=post)
         if form.is_valid():
             form.save()
             return redirect('home')
