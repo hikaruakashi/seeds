@@ -399,3 +399,11 @@ section {
 .dropdown button {
     background-color: white;
 }
+
+.delete p{
+    text-align: center;
+}
+
+.delete form{
+    text-align: center;
+}

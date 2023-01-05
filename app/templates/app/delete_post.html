@@ -1,13 +1,18 @@
 {% extends 'main.html' %}
 
 {% block content %}
+<div class="sub">
+    <div class="delete">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>本当に"{{obj}}"を削除しますか?</p>
+            
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <p>本当に"{{obj}}"を削除しますか</p>
-    
-    <a href="{{request.META.HTTP.REFERER}}">戻る</a>
-    <input type="submit" value="Confirm" />
-</form>
+            <input type="submit" value="削除" />
 
+        </form>
+        <!-- <a href="{{request.META.HTTP.REFERER}}">戻る</a> -->
+
+    </div>
+</div>
 {% endblock content %}
