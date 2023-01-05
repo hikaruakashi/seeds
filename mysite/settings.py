@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'app.apps.AppConfig',
+    
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,17 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'     
+
+
+#.env
+
+import environ
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR,'.env'))
+
+DEBUG = env('DEBUG')
+
+DATABASES = {
+    'default': env.db(),
+}
