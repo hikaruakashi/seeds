@@ -68,9 +68,9 @@ URLこちらから
 
 ## 開発期間・過程
 
-2021年4月~ Python学習開始
-2022年11月~ Django、HTML、CSS学習、WEBアプリ開発開始
-2022年12月~ Bootstrap5、AWS学習開始、インフラ整備開始
+2021年4月~ Python学習開始  
+2022年11月~ Django、HTML、CSS学習、WEBアプリ開発開始  
+2022年12月~ Bootstrap5、AWS学習開始、インフラ整備開始  
 
 ## 開発背景・過程
 
