@@ -140,13 +140,13 @@ MEDIA_URL = '/media/'
 
 #.env
 
-import environ
+# import environ
 
-env = environ.Env()
-env.read_env(os.path.join(BASE_DIR,'.env'))
+# env = environ.Env()
+# env.read_env(os.path.join(BASE_DIR,'.env'))
 
-DEBUG = env('DEBUG')
+# DEBUG = env('DEBUG')
 
-DATABASES = {
-    'default': env.db(),
-}
+# DATABASES = {
+#     'default': env.db(),
+# }

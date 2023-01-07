@@ -42,21 +42,6 @@ def logoutUser(request):
     return redirect('home')
 
 def registerPage (request):
-    # form = UserCreationForm()
-
-    # if request.method == 'POST':
-    #     form = UserCreationForm(request.POST)
-    #     if form.is_valid():
-    #         user = form.save(commit=False)
-    #         user.username = user.username.lower()
-    #         user.save()
-    #         login(request,user)
-    #         return redirect('home')
-    #     else:
-    #         messages.error(request,'エラー')
-
-    # return render(request,'app/login_register.html',{'form':form})
-
     form = RegisterUserForm()
     
     if request.method == 'POST':
@@ -131,10 +116,9 @@ def updatePost(request,pk):
     form = PostForm(instance=post)
 
     if request.user != post.author:
-        return HttpResponse('許されない')
+        return HttpResponse('あなたは所有者ではありません')
 
     if request.method == 'POST':
-        #ここがあまりよくわからない
         form = PostForm(request.POST,request.FILES,instance=post)
         if form.is_valid():
             form.save()
@@ -149,7 +133,7 @@ def deletePost(request,pk):
     post = Post.objects.get(id=pk)
 
     if request.user != post.author:
-        return HttpResponse('許されない')
+        return HttpResponse('あなたは所有者ではありません')
 
     if request.method == 'POST':
         post.delete()
