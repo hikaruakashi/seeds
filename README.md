@@ -42,15 +42,15 @@ URLこちらから
 
 ## 使用技術
 
-フロントエンド
-HTML
-CSS
-Bootstrap 5
+フロントエンド  
+- HTML   
+- CSS  
+- Bootstrap 5.0.2  
 
-バックエンド
-Python
-Django
-SQL3
+バックエンド  
+- Python 3.10.6
+- Django 4.1.5  
+- SQL3  
 
 ## 開発人数
 
