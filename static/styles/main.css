@@ -1,19 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
-:root {
-    --primary: #0d6ef0;
-    --dark: #21252f;
-    --body: #888;
-    --box-shadow:0 8px 22px rgba(0,0,0,0.2);
-}
-
-body {
+/* body {
     font-family: 'Sora', sans-serif;
     padding-top: 5rem;
 
     background-color:#c4d7d1 ;
-}
+} */
 
 /* .main {
     max-width: 800px;
