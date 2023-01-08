@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '37mp9w3a1m9g@+2ffqe9q4&v#)5c5tuj78^xuok&ui5t!z9%dk'
+# SECRET_KEY = '37mp9w3a1m9g@+2ffqe9q4&v#)5c5tuj78^xuok&ui5t!z9%dk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ['34.224.253.144','www.seeds-for-students.link']
+# ALLOWED_HOSTS = ['34.224.253.144','www.seeds-for-students.link']
 
 
 
@@ -144,9 +144,10 @@ import environ
 
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR,'.env'))
-
+SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 DATABASES = {
     'default': env.db(),
 }
+
