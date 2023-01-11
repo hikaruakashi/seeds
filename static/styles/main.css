@@ -189,7 +189,8 @@ section {
 }
 
 .post-list-item .card p,
-.post-author a {
+.post-author a,
+.post-topic a{
     font-size: 12px;
     margin: 10px;
     opacity: 0.65;
