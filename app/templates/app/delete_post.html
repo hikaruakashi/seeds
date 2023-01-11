@@ -1,13 +1,11 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<div class="sub">
+<div class="frame">
     <div class="delete">
         <form method="POST" action="">
             {% csrf_token %}
             <p>本当に"{{obj}}"を削除しますか?</p>
-            
-
             <input type="submit" value="削除" />
 
         </form>

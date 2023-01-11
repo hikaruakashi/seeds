@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if page == 'login' %}
-<div class="sub">
+<div class="frame">
   <h1>ログイン</h1>
     <form method="POST" action="">
         {% csrf_token %}
@@ -30,7 +30,7 @@
 </div>
 {% else %}
 
-<div class="sub">
+<div class="frame">
     <!-- <form method="POST" action="">
         {% csrf_token %}
         <input type="submit" value="Register" />
