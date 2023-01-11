@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="page">
-    <div class="frame">
+    <div class="sub-frame">
     <section id="posts">
         <div class="container">
             <div class="row">
@@ -79,10 +79,11 @@
                                     </div>
                                 </a>
                                     <div class="post-topic">
-                                        <p class="btn btn-sm">
+                                        <a class="btn btn-sm" role="button">
                                             #{{post.topic}}
-                                        </p>
+                                        </a>
                                     </div>
+                                    
                                     <div class="post-author">
                                         <a class="btn btn-sm" role="button" href="{% url 'user-profile' post.author.id %}">
                                             投稿者：{{post.author.username}}
