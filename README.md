@@ -7,10 +7,6 @@ https://seeds.onrender.com
 ![image2](project-images/project-images2.png)
 ## 作成した人
 
-幼少期からパソコンにハマる  
-高校からは昔から好きな音楽を実際にパソコンのDTMでものづくりに専念する  
-大学からPythonを学び始め、機械学習などで文法を学んだ上、WEBアプリを作れるDjangoの魅力に気づき、アプリを制作を開始。
-
 # サービスの概要
 
 ## Seedsとは
